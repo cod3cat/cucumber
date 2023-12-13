@@ -22,7 +22,7 @@ public class Contact_Us_Test {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.setBinary("${{ steps.setup-chrome.outputs.chrome-path }}");
-        options.setCapability("Capabilities","{browserName: chrome, goog:chromeOptions: {args: [], binary: ${{ steps.setup-chrome.outputs.chrome-path }}, extensions: []}}]}]");
+        options.setCapability("Capabilities","{browserName: chrome, goog:chromeOptions: {args: [], binary: $CHROMEWEBDRIVER, extensions: []}}]}]");
         driver = new ChromeDriver(options);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
