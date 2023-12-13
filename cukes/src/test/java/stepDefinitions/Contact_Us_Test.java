@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class Contact_Us_Steps {
+public class Contact_Us_Test {
 
     private WebDriver driver;
     @Before
