@@ -21,7 +21,7 @@ public class Contact_Us_Test {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
-        options.setBinary("/usr/local/share/chromedriver-linux64/chromedriver");
+        options.setBinary("/usr/local/share/chromedriver-linux64");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
