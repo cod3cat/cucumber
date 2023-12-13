@@ -25,6 +25,8 @@ jobs:
       uses: stCarolas/setup-maven@v.4.5 
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
+    - run: chrome --version
+    - run: echo "::debug::{chrome-path}"
     - name: Set up JDK 21
       uses: actions/setup-java@v3
       with:
