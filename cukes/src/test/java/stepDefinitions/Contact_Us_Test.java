@@ -23,7 +23,6 @@ public class Contact_Us_Test {
         options.addArguments("--headless");
         options.setBinary("/usr/local/share/chromedriver-linux64/chromedriver");
         driver = new ChromeDriver(options);
-        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
