@@ -26,18 +26,15 @@ public class Base_PO {
     }
 
     public void sendKeys(By by, String stringToType) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToType);
+        getWait().until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToType);
     }
 
     public void sendKeys(WebElement element, String stringToType) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(stringToType);
+        getWait().until(ExpectedConditions.elementToBeClickable(element)).sendKeys(stringToType);
     }
 
     public void waitForElementAndClick(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+        getWait().until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
     public void navigateTo(String url) {
@@ -45,13 +42,19 @@ public class Base_PO {
     }
 
     public void switchToAlertAndAssertText(String expectedMessage) {
+        getWait().until(ExpectedConditions.alertIsPresent());
         String message = getDriver().switchTo().alert().getText();
         Assert.assertEquals(message, expectedMessage);
     }
 
     public void validateText(WebElement element, String expected) {
+        getWait().until(ExpectedConditions.visibilityOf(element));
         String message = element.getText();
         Assert.assertEquals(message, "Thank You for your Message!");
+    }
+
+    public WebDriverWait getWait() {
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(10));
     }
 
 }

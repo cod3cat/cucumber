@@ -19,7 +19,6 @@ public class Login_Steps_Test extends Login_PO {
 
     @When("I enter a username {word}")
     public void i_enter_a_username(String username) {
-        /*sendKeys(By.cssSelector("#text"), username);*/
         setUserName(username);
     }
 
