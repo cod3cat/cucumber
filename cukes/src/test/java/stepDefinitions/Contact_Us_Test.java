@@ -5,11 +5,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import stepDefinitions.base.Hooks;
+import static driver.DriverFactory.getDriver;
 
-public class Contact_Us_Test extends Hooks {
+public class Contact_Us_Test {
+    private final WebDriver driver = getDriver();
 
     public String getRandomData(int length) {
         return RandomStringUtils.randomNumeric(length);
