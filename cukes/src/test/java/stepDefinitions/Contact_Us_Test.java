@@ -9,13 +9,14 @@ import org.testng.Assert;
 import pageObjects.Base_PO;
 import pageObjects.ContactUs_PO;
 import pageObjects.Login_PO;
+import utils.Global_Vars;
 
 public class Contact_Us_Test extends ContactUs_PO {
     private final WebDriver driver = getDriver();
 
     @Given("I access the webdriver university contact us page")
     public void i_access_the_webdriver_university_contact_us_page() {
-        navigateTo("https://webdriveruniversity.com/Contact-Us/contactus.html");
+        navigateTo(Global_Vars.BASE_URL + "/Contact-Us/contactus.html");
     }
 
     @When("I enter a unique first name")
