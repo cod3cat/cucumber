@@ -4,8 +4,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import pageObjects.Login_PO;
+import utils.Global_Vars;
 
 public class Login_Steps_Test extends Login_PO {
 
@@ -14,7 +14,7 @@ public class Login_Steps_Test extends Login_PO {
 
     @Given("I access the webdriver university login page")
     public void i_access_the_webdriver_university_login_page() {
-        navigateTo("https://webdriveruniversity.com/Login-Portal/index.html");
+        navigateTo(Global_Vars.BASE_URL + "/Login-Portal/index.html");
     }
 
     @When("I enter a username {word}")

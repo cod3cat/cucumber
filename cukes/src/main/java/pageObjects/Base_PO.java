@@ -2,13 +2,13 @@ package pageObjects;
 
 import driver.DriverFactory;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import utils.Global_Vars;
 
 import java.time.Duration;
 
@@ -23,10 +23,6 @@ public class Base_PO {
 
     public String getRandomData(int length) {
         return RandomStringUtils.randomNumeric(length);
-    }
-
-    public void sendKeys(By by, String stringToType) {
-        getWait().until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToType);
     }
 
     public void sendKeys(WebElement element, String stringToType) {
@@ -50,11 +46,11 @@ public class Base_PO {
     public void validateText(WebElement element, String expected) {
         getWait().until(ExpectedConditions.visibilityOf(element));
         String message = element.getText();
-        Assert.assertEquals(message, "Thank You for your Message!");
+        Assert.assertEquals(message, expected);
     }
 
     public WebDriverWait getWait() {
-        return new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_TIMEOUT));
     }
 
 }
