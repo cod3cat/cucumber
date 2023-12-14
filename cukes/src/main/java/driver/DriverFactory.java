@@ -26,11 +26,11 @@ public class DriverFactory {
 
         switch (getBrowserType()) {
             case "chrome" -> {
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments(Stream.of("--no-sandbox", "--disable-dev-smh-usage", "headless").collect(Collectors.toList()));
-                options.setBinary("/usr/local/share/chromedriver-linux64");
-                driver = new ChromeDriver(options);
-//                driver = new ChromeDriver();
+//                ChromeOptions options = new ChromeOptions();
+//                options.addArguments(Stream.of("--no-sandbox", "--disable-dev-smh-usage", "headless").collect(Collectors.toList()));
+//                options.setBinary("/usr/local/share/chromedriver-linux64");
+//                driver = new ChromeDriver(options);
+                  driver = new ChromeDriver();
             }
 
             case "firefox" ->
