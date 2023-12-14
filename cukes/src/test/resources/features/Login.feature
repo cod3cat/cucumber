@@ -25,7 +25,7 @@ Feature: Webdriver University - Login Feature
     Then I should be presented with the validation message <message>
 
     Examples:
-      | username   | password     | message               |
+      | username   | password     | message              |
       | webdriver  | webdriver123 | validation succeeded |
-      | webdriver  | webdriver1   | validation failed     |
-      | webdriver1 | webdriver123 | validation failed     |
+      | webdriver  | webdriver1   | validation failed    |
+      | webdriver1 | webdriver123 | validation failed    |
