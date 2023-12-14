@@ -10,24 +10,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+//import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class Contact_Us_Test {
 
     private WebDriver driver;
-    @Before
+    @Before("@contact-us")
     public void setup() {
-        ChromeOptions options = new ChromeOptions();
+        /*ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.setBinary("/usr/local/share/chromedriver-linux64");
-        driver = new ChromeDriver(options);
-//        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);*/
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
-    @After
+    @After("@contact-us")
     public void tearDown() {
         driver.quit();
     }
