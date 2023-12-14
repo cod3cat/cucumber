@@ -73,6 +73,6 @@ public class Contact_Us_Test {
     @Then("I should be presented with a successful contact us submission message")
     public void i_should_be_presented_with_a_successful_contact_us_submission_message() {
         String message = driver.findElement(By.cssSelector("h1")).getText();
-        Assert.assertEquals(message, "Thank You for your Message!");
+        Assert.assertEquals(message, "Thank You for your Message");
     }
 }
