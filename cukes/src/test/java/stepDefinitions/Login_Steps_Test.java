@@ -21,11 +21,11 @@ public class Login_Steps_Test {
 
     @Before("@login")
     public void setup() {
-        ChromeOptions options = new ChromeOptions();
+        /*ChromeOptions options = new ChromeOptions();
         options.addArguments(Stream.of("--no-sandbox", "--disable-dev-smh-usage", "headless").collect(Collectors.toList()));
         options.setBinary("/usr/local/share/chromedriver-linux64");
-        driver = new ChromeDriver(options);
-//        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);*/
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
@@ -55,5 +55,12 @@ public class Login_Steps_Test {
         String message = driver.switchTo().alert().getText();
         driver.switchTo().alert().accept();
         Assert.assertEquals(message, "validation succeeded");
+    }
+
+    @Then("I should bee presented with the unsuccessful login message")
+    public void i_should_bee_presented_with_the_unsuccessful_login_message() {
+        String message = driver.switchTo().alert().getText();
+        driver.switchTo().alert().accept();
+        Assert.assertEquals(message, "validation failed");
     }
 }
