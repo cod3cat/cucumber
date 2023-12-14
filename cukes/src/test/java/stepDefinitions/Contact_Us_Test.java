@@ -59,7 +59,7 @@ public class Contact_Us_Test extends Base_PO {
 
     @When("I click on the submit button")
     public void i_click_on_the_submit_button() {
-        driver.findElement(By.xpath("//input[@type = 'submit']")).click();
+        waitForElementAndClick(By.xpath("//input[@type = 'submit']"));
     }
 
     @Then("I should be presented with a successful contact us submission message")

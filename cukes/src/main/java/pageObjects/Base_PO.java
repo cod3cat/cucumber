@@ -25,4 +25,9 @@ public class Base_PO {
         wait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(stringToType);
     }
 
+    public void waitForElementAndClick(By by) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(by)).click();
+    }
+
 }

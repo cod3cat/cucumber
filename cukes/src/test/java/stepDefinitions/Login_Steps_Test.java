@@ -29,7 +29,7 @@ public class Login_Steps_Test extends Base_PO {
 
     @When("I click on the login button")
     public void i_click_on_the_login_button() {
-        driver.findElement(By.cssSelector("#login-button")).click();
+        waitForElementAndClick(By.cssSelector("#login-button"));
     }
 
     @Then("I should be presented with the successful login message")
