@@ -1,37 +1,13 @@
 package stepDefinitions;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import stepDefinitions.base.Hooks;
 
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-public class Login_Steps_Test {
-
-    private WebDriver driver;
-
-    @Before("@login")
-    public void setup() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments(Stream.of("--no-sandbox", "--disable-dev-smh-usage", "headless").collect(Collectors.toList()));
-        options.setBinary("/usr/local/share/chromedriver-linux64");
-        driver = new ChromeDriver(options);
-//        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
-    @After("@login")
-    public void tearDown() {
-        driver.quit();
-    }
+public class Login_Steps_Test extends Hooks {
 
     @Given("I access the webdriver university login page")
     public void i_access_the_webdriver_university_login_page() {
