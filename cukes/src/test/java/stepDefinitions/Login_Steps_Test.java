@@ -6,10 +6,9 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import pageObjects.Base_PO;
 
-import static driver.DriverFactory.getDriver;
-
-public class Login_Steps_Test {
+public class Login_Steps_Test extends Base_PO {
 
     private final WebDriver driver = getDriver();
 
@@ -20,17 +19,17 @@ public class Login_Steps_Test {
 
     @When("I enter a username {word}")
     public void i_enter_a_username(String username) {
-        driver.findElement(By.cssSelector("#text")).sendKeys(username);
+        sendKeys(By.cssSelector("#text"), username);
     }
 
     @When("I enter a password {word}")
     public void i_enter_a_password(String password) {
-        driver.findElement(By.cssSelector("#password")).sendKeys(password);
+        sendKeys(By.cssSelector("#password"), password);
     }
 
     @When("I click on the login button")
     public void i_click_on_the_login_button() {
-        driver.findElement(By.cssSelector("#login-button")).click();
+        waitForElementAndClick(By.cssSelector("#login-button"));
     }
 
     @Then("I should be presented with the successful login message")
