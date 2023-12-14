@@ -20,45 +20,43 @@ public class Contact_Us_Test extends Base_PO {
 
     @When("I enter a unique first name")
     public void i_enter_a_unique_first_name() {
-        WebElement fistName = driver.findElement(By.name("first_name"));
-        fistName.sendKeys("John" + getRandomData(5));
+        sendKeys(By.name("first_name"), "John" + getRandomData(5));
     }
 
     @When("I enter a unique last name")
     public void i_enter_a_unique_last_name() {
-        driver.findElement(By.name("last_name")).sendKeys("Doe"  + getRandomData(5));
+        sendKeys(By.name("last_name"),"Doe"  + getRandomData(5));
     }
 
     @When("I enter a unique email address")
     public void i_enter_a_unique_email_address() {
-        driver.findElement(By.name("email")).sendKeys("john.doe@test.com");
+        sendKeys(By.name("email"),"john.doe@test.com");
     }
 
 
     @When("I enter a unique comment")
     public void i_enter_a_unique_comment() {
-        driver.findElement(By.name("message")).sendKeys("Test Message!"  + getRandomData(5));
+        sendKeys(By.name("message"),"Test Message!"  + getRandomData(5));
     }
 
     @When("I enter a specific first name {word}")
     public void i_enter_a_specific_first_name(String firstName) {
-        WebElement fistName = driver.findElement(By.name("first_name"));
-        fistName.sendKeys(firstName);
+        sendKeys(By.name("first_name"), firstName);
     }
 
     @When("I enter a specific last name {word}")
     public void i_enter_a_specific_last_name(String lastName) {
-        driver.findElement(By.name("last_name")).sendKeys(lastName);
+        sendKeys(By.name("last_name"), lastName);
     }
 
     @When("I enter a specific email address {word}")
     public void i_enter_a_specific_email_address(String email) {
-        driver.findElement(By.name("email")).sendKeys(email);
+        sendKeys(By.name("email"), email);
     }
 
     @When("I enter a specific comment {string}")
     public void i_enter_a_specific_comment(String message) {
-        driver.findElement(By.name("message")).sendKeys(message);
+        sendKeys(By.name("message"), message);
     }
 
     @When("I click on the submit button")

@@ -19,12 +19,12 @@ public class Login_Steps_Test extends Base_PO {
 
     @When("I enter a username {word}")
     public void i_enter_a_username(String username) {
-        driver.findElement(By.cssSelector("#text")).sendKeys(username);
+        sendKeys(By.cssSelector("#text"), username);
     }
 
     @When("I enter a password {word}")
     public void i_enter_a_password(String password) {
-        driver.findElement(By.cssSelector("#password")).sendKeys(password);
+        sendKeys(By.cssSelector("#password"), password);
     }
 
     @When("I click on the login button")
