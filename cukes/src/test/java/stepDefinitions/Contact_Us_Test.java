@@ -8,14 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import static driver.DriverFactory.getDriver;
+import pageObjects.Base_PO;
 
-public class Contact_Us_Test {
+public class Contact_Us_Test extends Base_PO {
     private final WebDriver driver = getDriver();
-
-    public String getRandomData(int length) {
-        return RandomStringUtils.randomNumeric(length);
-    }
 
     @Given("I access the webdriver university contact us page")
     public void i_access_the_webdriver_university_contact_us_page() {
