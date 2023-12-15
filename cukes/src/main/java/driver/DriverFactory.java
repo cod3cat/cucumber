@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import utils.Global_Vars;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -50,7 +51,7 @@ public class DriverFactory {
         Properties props = new Properties();
 
         try {
-            props.load(new FileInputStream(System.getProperty("user.dir") + "/src/main/java/properties/config.properties"));
+            props.load(new FileInputStream(System.getProperty("user.dir") + Global_Vars.PropsFile_Location));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

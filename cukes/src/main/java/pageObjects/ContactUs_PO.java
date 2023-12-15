@@ -10,7 +10,6 @@ public class ContactUs_PO extends Base_PO {
     private @FindBy(name = "email") WebElement email_textField;
     private @FindBy(name = "message") WebElement message_textField;
     private @FindBy(xpath = "//input[@type='submit']") WebElement submit_Button;
-
     private @FindBy(css = "h1") WebElement submit_Message;
 
     public ContactUs_PO() {
